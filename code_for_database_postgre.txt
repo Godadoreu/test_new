@@ -1,0 +1,65 @@
+create table test_data.stream
+(
+   id                     numeric,
+   course_id              numeric,
+   start_at               timestamp,
+   end_at                 timestamp,
+   created_at             timestamp,
+   updated_at             timestamp,
+   deleted_at             timestamp,
+   is_open                numeric,
+   name                   varchar(255),
+   homework_deadline_days numeric,
+	md5 bytea,
+	insert_date timestamp
+);
+create unique index I_test_data_stream on test_data.stream(id);
+
+
+create table test_data.course
+(
+   id                    numeric,
+   title                 varchar(255),
+   created_at            timestamp,
+   updated_at            timestamp,
+   deleted_at            timestamp,
+   icon_url              varchar(255),
+   is_auto_course_enroll numeric,
+   is_demo_enroll        numeric,
+	md5 bytea,
+	insert_date timestamp
+);
+create unique index I_test_data_course on test_data.course(id);
+
+create table test_data.stream_module
+(
+   id numeric,
+   stream_id       numeric,
+   title           varchar(255),
+   created_at      timestamp,
+   updated_at      timestamp,
+   order_in_stream numeric,
+   deleted_at      timestamp,
+	md5 bytea,
+	insert_date timestamp
+);
+create unique index I_test_data_stream_mod on test_data.stream_module(id);
+
+create table test_data.stream_module_lesson
+(
+   id                          numeric,
+   title                       varchar(255),
+   description                 varchar,
+   start_at                    timestamp,
+   end_at                      timestamp,
+   homework_url                varchar(500),
+   teacher_id                  numeric,
+   stream_module_id            numeric,
+   deleted_at                  timestamp,
+   online_lesson_join_url      varchar(255),
+   online_lesson_recording_url varchar(255),
+	md5 bytea,
+	insert_date timestamp
+);
+create unique index I_test_data_stream_mod_les on test_data.stream_module_lesson(id);
+
