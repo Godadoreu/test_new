@@ -1,0 +1,8 @@
+create view test_data.less_analysis as
+select c.title as course_title, s.stream_id, q.name as stream_name, s.title as title_of_module, t.title as name_of_lesson,t.start_at,t.end_at, t.teacher_id from test_data.stream_module_lesson t
+join test_data.stream_module s on t.stream_module_id = s.id
+join test_data.stream q on q.id = s.stream_id
+join test_data.course c on c.id = q.course_id
+where q.is_open = 1;
+
+select * from test_data.less_analysis;
