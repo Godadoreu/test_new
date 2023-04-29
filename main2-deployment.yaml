@@ -1,0 +1,52 @@
+###
+### A complete description of a Prefect Deployment for flow 'main2'
+###
+name: str_module
+description: null
+version: d8ed923cbf96869212710807c47e61c0
+# The work queue that will handle this deployment's runs
+work_queue_name: default
+work_pool_name: default-agent-pool
+tags: []
+parameters: {}
+schedule: null
+is_schedule_active: true
+infra_overrides: {}
+
+###
+### DO NOT EDIT BELOW THIS LINE
+###
+flow_name: main2
+manifest_path: null
+infrastructure:
+  type: process
+  env: {}
+  labels: {}
+  name: null
+  command: null
+  stream_output: true
+  working_dir: null
+  _block_document_id: 0ebea332-08a1-456d-82ce-cb10d09f1301
+  _block_document_name: anonymous-437a5d15-5c4b-431b-8cd0-4f1123a609e1
+  _is_anonymous: true
+  block_type_slug: process
+  _block_type_slug: process
+storage:
+  repository: https://github.com/Godadoreu/test_new.git
+  reference: null
+  access_token: '**********'
+  include_git_objects: true
+  _block_document_id: df967888-f3bb-44d0-9f58-63adfb32a5e2
+  _block_document_name: github-repo
+  _is_anonymous: false
+  block_type_slug: github
+  _block_type_slug: github
+path: ''
+entrypoint: main.py:main2
+parameter_openapi_schema:
+  title: Parameters
+  type: object
+  properties: {}
+  required: null
+  definitions: null
+timestamp: '2023-04-29T04:54:17.289206+00:00'
